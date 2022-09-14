@@ -44,7 +44,6 @@ CONFIGURE_ARGS += \
 	--disable-notify \
 
 define Build/Configure
-	$(SED) 's/dhclient/udhcpc -i/g' $(PKG_BUILD_DIR)/src/myconfig.c
 	( cd $(PKG_BUILD_DIR); ./autogen.sh )
 	$(call Build/Configure/Default)
 endef
